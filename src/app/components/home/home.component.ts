@@ -30,7 +30,7 @@ export class HomeComponent {
   }
 
   handlePageEvent(pageEvent: PageEvent) {
-    console.log(pageEvent)
+    console.log('pageEvent: ' + pageEvent)
     this.currentPage = pageEvent.pageIndex
     this.charactersServices.getCharacters(this.currentPage).subscribe(data => this.characters = data.results)
 
