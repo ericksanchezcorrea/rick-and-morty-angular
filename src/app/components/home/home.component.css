@@ -1,0 +1,25 @@
+
+/* Card */
+.example-card {
+    max-width: 400px;
+    height: auto /* Ajusta según sea necesario */
+}
+
+@media screen and (min-width:576px) and (max-width:800px){
+    .example-card {
+        width: 250px;
+    }
+
+}
+/* corazón */
+.white-button{
+    color: black;
+}
+
+.outline-button {
+    background-color: transparent;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    padding: 6px;
+}
+  

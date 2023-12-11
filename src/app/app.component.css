@@ -1,0 +1,27 @@
+
+/* NavBar */
+.example-spacer {
+  display: flex;
+  flex-grow: 1;
+  justify-content: end;
+  align-items: center;
+  gap: 30px;
+}
+
+/* SideBar */
+.example-container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}

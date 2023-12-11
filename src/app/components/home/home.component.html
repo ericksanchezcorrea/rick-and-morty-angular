@@ -1,0 +1,35 @@
+
+<div fxLayout="row wrap"
+     fxLayoutGap="20px"
+     fxLayoutAlign="center center" >
+
+    <div *ngFor="let item of characters" >
+        <mat-card class="example-card">
+            <mat-card-header>
+
+                <mat-card-title fxLayout="row" fxLayoutAlign="center center">
+                  {{item.name}}
+                  <button mat-icon-button color="warn" aria-label="heart icon" (click)="changeFavorite(item.id)">
+                    <mat-icon [ngStyle]="{'color': myFavorites.includes(item.id) ? 'red' : 'gray'}">favorite</mat-icon>
+                  </button>
+                </mat-card-title>
+             
+              <mat-card-subtitle>{{item.species}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src={{item.image}} alt={{item.name}} [routerLink]="['/character/', item.id]"  >
+        </mat-card>
+    </div>
+    
+    <mat-paginator 
+        [length]="826"
+        [pageSize]="20"
+        [pageIndex]="currentPage"
+        (page)="handlePageEvent($event)"
+        [showFirstLastButtons]="true"
+        aria-label="Select page">
+    </mat-paginator>
+
+</div>
+
+
+
