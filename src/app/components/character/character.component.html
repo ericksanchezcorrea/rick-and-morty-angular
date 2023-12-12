@@ -1,24 +1,48 @@
+<div class="character_wrapper" 
+     fxLayout="row" 
+     fxLayout.xs="column" 
+     fxLayoutAlign="center start"
+     fxLayoutAlign.xs="center center"
+     fxLayoutGap="100"
+     fxLayoutGap.xs="20"
+    >
 
-<div fxLayout="row wrap"
-    fxLayoutGap="20px"
-    fxLayoutAlign="center center" >
+    <div class="button_container">
+        <div class="example-button-container" [routerLink]="['/character', character?.id-1]">
+            <button mat-fab color="primary" aria-label="icon button with a arrow back">
+              <mat-icon>arrow_back_ios</mat-icon>
+            </button>
+        </div>
+    </div>
 
-<div >
 
-   <mat-card class="example-card">
-       <mat-card-header>
-
-           <mat-card-title fxLayout="row" fxLayoutAlign="center center">
-               {{item?.name}}
-               <button mat-icon-button color="warn" aria-label="heart icon" (click)="changeFavorite(item.id)">
-                    <mat-icon [ngStyle]="{'color': isFavorite? 'red':'gray'}">favorite</mat-icon>
-               </button>
-           </mat-card-title>
+    <div>
+        <img src={{character?.image}} alt={{character?.name}}>
+    </div>
+    
+    <div>
+        <h2>{{character?.name}}</h2>
+        <p><b>Species: </b>{{character?.species}}</p>
+        <p><b>Status: </b>{{character?.status}}</p>
+        <p><b>Gender: </b>{{character?.gender}}</p>
+        <p><b>Origin: </b>{{character?.origin.name}}</p>
+        
+        <div fxLayout="row" fxLayoutAlign="center center" >
+            <button mat-icon-button [color]="isFavorite? 'warn':'white'" aria-label="icon button with a heart icon"
+            (click)="changeFavorite()">
+            <mat-icon>favorite</mat-icon>
+            </button>
+        </div>
            
-           <mat-card-subtitle>{{item?.species}}</mat-card-subtitle>
-       </mat-card-header>
-       <img mat-card-image src={{item?.image}} alt={{item?.name}}  >
-   </mat-card>
+
+    </div>
+
+    <div class="button_container">
+        <div class="example-button-container"  [routerLink]="['/character', character?.id+1]">
+            <button mat-fab color="primary" aria-label="icon button with a arrow_foward icon" >
+              <mat-icon>arrow_forward_ios</mat-icon>
+            </button>
+        </div>
+    </div>
 </div>
 
-</div>
