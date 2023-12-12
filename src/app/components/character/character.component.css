@@ -1,0 +1,13 @@
+.character_wrapper{
+    padding-top: 50px;
+}
+.button_container{
+    position: relative;
+    left: 0;
+    top: 100px;
+}
+.button_container_right{
+    position: relative;
+    left: 0;
+    top: 100px;
+}
